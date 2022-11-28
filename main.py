@@ -29,13 +29,14 @@ for i,j in zip(name_list, phone_list):
         new_ph = ''
     phone.append(new_ph)
 
+# 엑셀 다중 열 복사
 # 원본 데이터 데이터프레임 생성 후 csv 파일 만들기
 # to_csv : index 는 false 여야 번호 생성을 안한다.
 all_col = file_df.iloc[:, 2:14].copy()
 all_df = pd.DataFrame.from_dict(all_col)
 all_c = all_df.to_csv('main.csv', encoding='utf-8-sig',index=False)
 
-# csv 파일에 특정 열 삽입
+# 엑셀 특정 열 삽입
 # csv 파일을 데이터프레임으로 변환한다.
 # 성, 이름, 휴대폰 번호는 리스트 타입으로 삽입
 df = pd.read_csv('main.csv')
